@@ -1,0 +1,30 @@
+service: dostartup-backend
+
+provider:
+  name: aws
+  profile: default
+  runtime: nodejs18.x
+  region: eu-north-1
+  environment:
+    TABLE_NAME: dostartup-formdata
+    SES_REGION: eu-north-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:Scan
+        - dynamodb:UpdateItem
+        - ses:SendEmail
+      Resource: "*"
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
+
+plugins:
+  - serverless-offline

@@ -2,21 +2,30 @@
   "name": "dostartup-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ansh1vohra/dostartup-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ansh1vohra/dostartup-server/issues"
+  },
+  "homepage": "https://github.com/Ansh1vohra/dostartup-server#readme",
   "dependencies": {
     "aws-sdk": "^2.1692.0",
-    "body-parser": "^2.2.0",
-    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "morgan": "^1.10.0",
-    "nodemailer": "^7.0.3"
+    "serverless-http": "^3.2.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^14.4.0"
   }
 }
